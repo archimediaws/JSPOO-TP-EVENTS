@@ -1,0 +1,232 @@
+$fondfuchia: #EC6895;
+
+html, body {
+    height: 100%;
+}
+
+
+body {
+     display: flex;
+    margin: 0px;
+    background-color: #F2F6F8;
+    font-family: 'Roboto', sans-serif;
+}
+
+#container_events{
+    display:flex;
+    flex-wrap: wrap;
+    width: 60%;
+    background-color: #03a9f4;
+
+    .event {
+        position: relative;
+        margin: 10px;
+        background-color: #fff;
+        width : 200px;
+        height: 180px;
+        text-align: center;
+        -webkit-box-shadow: 6px 6px 56px -17px rgba(0,0,0,0.75);
+        -moz-box-shadow: 6px 6px 56px -17px rgba(0,0,0,0.75);
+        box-shadow: 6px 6px 56px -17px rgba(0,0,0,0.75);
+    
+            h2 {
+                margin:0px;
+                padding: 0px;
+            }
+    
+        .close {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            color: red;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    
+    
+        .openeventinfos {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 10px;
+            color: #393232;
+            height: 20px;
+            width: 150px;
+            font-weight: bold;
+            border-radius: 15px;
+            background-color: $fondfuchia;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+    
+    
+    }
+    
+    #events{
+        display:flex;
+        width: 100%;
+        height: 100%;
+    }
+
+    #eventinfos {
+        display:none;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        top: 0px;
+        left:0px;
+        margin: 10px;
+        background-color: $fondfuchia;
+        width : 100%;
+        -webkit-box-shadow: 6px 6px 56px -17px rgba(23, 21, 21, 0.75);
+        -moz-box-shadow: 6px 6px 56px -17px rgba(0,0,0,0.75);
+        box-shadow: 6px 6px 56px -17px rgba(0,0,0,0.75);
+    
+        #container_eventinfos {
+            background-color: $fondfuchia;
+            padding: 10px;
+            position: relative;
+            width: 50%;
+            
+            span {
+                color:white;
+                font-size: 20px;
+            }
+        }
+    
+    
+        #close {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            height: 20px;
+            width: 20px;
+            color: #141010;
+            text-align: center;
+            border-radius: 15px;
+            background-color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+            
+    
+        // ul li span {
+        //     margin-right: 10px;
+        // }
+    
+    }
+
+
+}
+
+#container_form_events{
+    
+    width:40%;
+    background-color: #D8E06F;
+
+    #add {
+        margin: 10px;
+        height: 50px;
+        font-size: 34px;
+        font-weight: bold;
+        border-radius: 25px;
+        background-color: #fff;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    p {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #add-event {
+        top: 20px;
+        margin: 10px;
+        display: none;
+    }
+    #event {
+        width: 152px;
+    }
+
+    #alert{
+        margin:10px;
+    }
+
+    #eventsold{
+        display:none;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        top: 0px;
+        left:0px;
+        margin: 10px;
+        background-color: $fondfuchia;
+        
+        
+    
+        #container_eventsold {
+            background-color: #FBF7F7;
+            padding: 10px;
+            position: relative;
+            width: 100%;
+            
+            #buttoneventsold{
+
+                width:100%;
+
+                #showoldevents{
+                    margin: 5px;
+                }
+
+            }
+
+            span {
+                color:#000000;
+                font-size: 14px;
+            }
+        }
+    
+    
+        #delelealloldevents {
+            position: absolute;
+            justify-content: center;
+            right: 5px;
+            top: 5px;
+            height: 20px;
+            width: 20px;
+            color: #141010;
+            text-align: center;
+            border-radius: 15px;
+            background-color: #fff;
+            font-weight: bold;
+            margin: 5px;
+            cursor: pointer;
+        }
+            
+    
+        ul li {
+            list-style: none;
+        }
+    
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
