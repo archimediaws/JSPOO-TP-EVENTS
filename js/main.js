@@ -55,10 +55,11 @@ $(document).on("click", "#close", function(){
 $(document).on("click", ".close", function(event){
         event.stopPropagation(); // empeche la propagation de l'evenement au parent
        var index = $(".close").index( $(this));
-        app.removeEvent ( index );
-        // app.removeInfos();
+        app.removeEvent ( index ); 
         app.$infos.fadeOut(300);
     });
+
+     
 
     window.onbeforeunload = function(){ //lorsque l'utilisateur quitte la page sauvegarde sur localstorage
     app.saveEvents();

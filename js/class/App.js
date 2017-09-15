@@ -27,9 +27,6 @@ class App {
             // variables static
             this.today = new Date();
          
-                
-            
-        
 
             this.events = []; // tableau objets events
             this.eventsOftheday = []; //tableau objets alerttoday
@@ -170,5 +167,8 @@ class App {
                 this.$eventstoday.html(html);
 
             }
+
+
+            
 
     }
