@@ -21,11 +21,26 @@ class App {
             this.$d_event = $("#d_event");
             this.$e_event = $("#e_event");
 
+            //alert event of yhe day
+            this.$eventstoday =$('#events_today');
+
+            // variables static
+            this.today = new Date();
+         
+                
+            
+        
+
             this.events = []; // tableau objets events
+            this.eventsOftheday = []; //tableau objets alerttoday
+
 
             // on declanche des instanciations des que new app
+            
             this.readEvents(); // lire boucle sur event dans events 
-            this.displayEvents(); // afiche 
+            this.setAlertToday(); // set les events du jour
+            this.displayAlertToday();// affiche les events du jour
+            this.displayEvents(); // afiche les events
             this.reinit(); //initialise valeur event + hide form et infos event
 
         }
@@ -122,6 +137,38 @@ class App {
                 this.$date_end_event.datepicker( options);
         
         
+            }
+
+            setAlertToday(){
+                
+               var aujourdhui = this.today.toLocaleDateString();
+               this.eventsOftheday =[]; // vide le tableau des alertes avant chaque set
+            //    console.log(aujourdhui);
+                        for(var eventa of this.events){ // pour chaque date de debut d'event = a la date d'aujourdhui
+                            if( eventa.datestartevent == aujourdhui ){
+                               this.addAlertToday(eventa);
+                            //    console.log(eventa);
+                            }
+                            
+                        }
+                    
+            }
+
+            addAlertToday(eventOftheday){
+                this.eventsOftheday.push( eventOftheday );
+                
+            }
+
+            displayAlertToday(){
+                var html="";
+                for(var eventOftheday of this.eventsOftheday){
+                    html += "<li>";
+                    html += "<span>" + eventOftheday.name+ "</span>";
+                    html += "</li>";
+                }
+                
+                this.$eventstoday.html(html);
+
             }
 
     }

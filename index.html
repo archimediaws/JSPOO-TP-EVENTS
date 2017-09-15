@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JAVASCRIPT POO TP EVENTS</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" href="js/jquery-ui/jquery-ui.min.css">
     
@@ -52,7 +51,12 @@
 
         <div id="alert">
                 <div class="alert alert-success">
-                        <strong>Evenement aujourd'hui : Titre</strong>
+                        <strong>Evenements d'aujourd'hui : </strong>
+                        <div>
+                             <ul id="events_today">
+                                 
+                            </ul>
+                        </div>    
                 </div>
                 <div class="alert alert-danger">
                         <strong>Attention il vous reste X jour avant Titre</strong> 
@@ -63,7 +67,7 @@
 
         <div id="eventsold">
                 <div id="container_eventsold" class="btn-group" role="group" >
-                    <div id="buttoneventsold"><button id="showoldevents" type="button" class="btn btn-success">Evénements périmés</button> </div>
+                    <div id="buttoneventsold"><button id="showoldevents" type="button" class="btn btn-info">Evénements périmés</button> </div>
                            <div id="eventstodelete">
                                 <ul>
                                     <li><span>event name to delet 1</span></li>
@@ -75,8 +79,6 @@
             </div>
 
     </div> <!-- end container_form_events -->
-
-   
 
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/jquery-ui/jquery-ui.min.js"></script>

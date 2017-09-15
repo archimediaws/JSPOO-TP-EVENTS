@@ -3,6 +3,7 @@ app.initPickersEvents(); // init du datepicker
 
 app.reinit();
 
+
 app.$add.click(function(){
 
 app.$form_event.slideToggle(200);
@@ -20,13 +21,19 @@ app.$form_event.submit(function(event){
     var event = new Event ( name, description, datestartevent, dateendevent );
     app.addEvent( event );
     event.display();
+    app.setAlertToday();
+    app.displayAlertToday();
+    
 
     app.reinit();
 
 });
 
+
+
+//on click sur event 
 $(document).on("click", ".event .openeventinfos", function(){
-app.$infos.fadeIn(300);
+app.$infos.fadeIn(300); 
 var index = $ (".event").index( $(this).parent() );
 var event = app.events[ index ]; //cherche l'event corrspondant
 app.currentEvent = event; // on va stocker event dans app on va pouvoir s'en resservir par la suite
@@ -36,9 +43,8 @@ app.$descriptioninfos.html( event.description );
 app.$d_event.html( event.datestartevent );
 app.$e_event.html( event.dateendevent );
 
-// app.$ul.html( eleve.getNotesHtml());
-
 });
+
 
 // cache les infos events
 $(document).on("click", "#close", function(){
