@@ -44,6 +44,7 @@
             <label for="description"> Description </label> <input id="description"  class="form-control" type="text" placeholder="Description"><br>
             <label for="date_start"> Date début </label> <input id="date_start"  class="form-control" type="text"><br>
             <label for="date_end"> Date fin </label> <input id="date_end" class="form-control" type="text"><br>
+            <!-- <input id="date_start_3" class="form-control" type="text"><br> -->
             <input class="btn btn-primary" type="submit" value="Ajouter">
         </form>
 
@@ -51,27 +52,33 @@
 
         <div id="alert">
                 <div class="alert alert-success">
-                        <strong>Evenements debutant aujourd'hui : </strong>
+                        <strong>DEBUTE AUJOURD'HUI : </strong>
                         <div>
                              <ul id="events_today">
-                                 
+                                 <!-- <li></li> -->
                             </ul>
                         </div>    
                 </div>
-                <div class="alert alert-danger">
-                        <strong>Attention il vous reste X jour avant Titre</strong> 
+                <div class="alert alert-info">
+                        <strong>EVENEMENTS PROCHES </strong> 
+                        <div>
+                                <ul id="events_closetoday">
+                                    <!-- <li></li> -->
+                               </ul>
+                           </div>   
                 </div>
         </div>
 
-        <hr>
+        
 
         <div id="eventsold">
                 <div id="container_eventsold" class="btn-group" role="group" >
-                    <div id="buttoneventsold"><button id="showoldevents" type="button" class="btn btn-info">Evénements termimés</button> </div>
+                    <div id="buttoneventsold"><button id="showoldevents" type="button" class="btn btn-warning">Liste Evénements Termimés</button> </div>
                            <div id="eventstodelete">
-                                <ul>
-                                    <li><span>event name to delet 1</span></li>
-                                    <li><span>event name to delet 2</span></li>
+                                <ul id="events_old">
+                                
+                                    <!-- <li></li> -->
+                                    
                                 </ul>
                                 <button id="deletealloldevents" type="button" class="btn btn-danger">Tout Supprimer</button>
                             </div>        

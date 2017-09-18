@@ -1,22 +1,21 @@
 $fondfuchia: #EC6895;
-
-html, body {
+html{
     height: 100%;
 }
-
 
 body {
      display: flex;
     margin: 0px;
     background-color: #F2F6F8;
     font-family: 'Roboto', sans-serif;
-}
+    height: 100vh;
+}//fin body
 
 #container_events{
     display:flex;
     flex-wrap: wrap;
-    width: 60%;
-    background-color: #03a9f4;
+    width: 70%;
+    background-color: rgba(186, 217, 233, 0.62);
 
     .event {
         position: relative;
@@ -38,14 +37,42 @@ body {
             position: absolute;
             right: 5px;
             top: 5px;
-            color: red;
+            color: #05010E;
             font-weight: bold;
+            font-size: 21px;
             cursor: pointer;
         }
     
         
-        
+        .closeold {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            color: red;
+            font-weight: bold;
+            font-size: 21px;
+            cursor: pointer;
+        }
 
+        .closetoday {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            color: #361B1B;
+            font-weight: bold;
+            font-size: 21px;
+            cursor: pointer;
+        }
+        
+        .closeto {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            color: #1FCA97;
+            font-weight: bold;
+            font-size: 21px;
+            cursor: pointer;
+        }
 
         .openeventinfos {
             position: absolute;
@@ -119,9 +146,7 @@ body {
         }
             
     
-        // ul li span {
-        //     margin-right: 10px;
-        // }
+        
     
     }
 
@@ -130,8 +155,9 @@ body {
 
 #container_form_events{
     
-    width:40%;
-    background-color: #D8E06F;
+    width:30vw;
+    height: 100vh;
+    background-color: rgba(158, 113, 172, 0.62);
 
     #add {
         margin: 10px;
@@ -164,6 +190,26 @@ body {
     #alert{
         margin:10px;
     }
+    
+    .btn{
+        width:100%;
+    }
+    #alert .alert-success{
+         width:100%;
+         background-color: #72C088;
+         color: #fff;
+    }
+
+    #alert .alert-info{
+        width:100%;
+        background-color: #51789B;
+        color: #fff;
+        
+    }
+    
+    ul li {
+        list-style: none;
+    }
 
     #eventsold{
         display:none;
@@ -178,7 +224,7 @@ body {
         
     
         #container_eventsold {
-            background-color: #FBF7F7;
+            background-color: #eab872;
             padding: 10px;
             position: relative;
             width: 100%;
@@ -186,11 +232,25 @@ body {
             #buttoneventsold{
 
                 width:100%;
+                
 
                 #showoldevents{
                     margin: 5px;
+                    color: #000000;
                 }
+            
 
+
+            }
+
+            #eventstodelete{
+                display: none;
+
+                #events_old{
+                    // display: none;
+                    width:100%;
+                }
+                
             }
 
             span {
@@ -224,12 +284,6 @@ body {
     }
 
 }
-
-
-
-
-
-
 
 
 
