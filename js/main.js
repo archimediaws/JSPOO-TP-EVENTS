@@ -1,6 +1,5 @@
 var app = new App(); // instance de l'application
-app.initPickersEvents(); // init du datepicker
-
+app.initPickersEvents(); // init du datepicker form events
 app.reinit(); // init des hide() slideup() et val() des events dans le formulaire
 
 ////////// formulaire ajouter event et gestion des alerts  ///////////////

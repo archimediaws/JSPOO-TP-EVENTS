@@ -33,7 +33,11 @@ class App {
             this.$events_old = $("#events_old");
             
 
-            // variables static pour event et alerts
+            // calendar
+            this.$datepicker = $("#datepicker");
+            
+
+            // variables static pour event et alerts et calendar
             this.today = new Date();
             this.todayplus3days = new Date(); // JS recup la date du jour = un objet -> var du jour-3
             this.todayplus3days.setDate(this.today.getDate()+3);  // set dans objet var du jour-3 la date du jour avec objet var du jour getDate()-3
@@ -47,11 +51,13 @@ class App {
 
             this.$alerttoday.hide();
             this.$alertClosetoday.hide();
-
             this.$events_old.hide();
 
-            this.readEvents(); // lire boucle sur event dans events sur le LS
+            
+            
 
+            this.readEvents(); // lire boucle sur event dans events sur le LS
+            this.initPickersCalendar(); // init le datepicker calendar
             this.setAlertToday(); // set alert les events du jour
             this.displayAlertToday();// affiche alerts des events du jour
             this.setAlertCloseToday(); // set alert les events proche du jour
@@ -334,6 +340,54 @@ class App {
                         }
 
                 
+                //// init datepicker for calendar///  
+
+        initPickersCalendar(){
+            var options = {
+                // closeText: 'Fermer',
+                // prevText: '&#x3c;Préc',
+                // nextText: 'Suiv&#x3e;',
+                currentText: 'Aujourd\'hui',
+                monthNames: ['Janvier','Fevrier','Mars','Avril','Mai','Juin',
+                'Juillet','Aout','Septembre','Octobre','Novembre','Decembre'],
+                monthNamesShort: ['Jan','Fev','Mar','Avr','Mai','Jun',
+                'Jul','Aou','Sep','Oct','Nov','Dec'],
+                dayNames: ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'],
+                dayNamesShort: ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'],
+                dayNamesMin: ['Di','Lu','Ma','Me','Je','Ve','Sa'],
+                weekHeader: 'Sm',
+                dateFormat: 'dd/mm/yy',
+                firstDay: 1,
+                // isRTL: false,
+                showMonthAfterYear: false,
+                yearSuffix: '',
+                // minDate: 0,
+                maxDate: '+12M +0D',
+                minDate: new Date (2017, 8, 1), 
+                beforeShowDay: $.proxy(this.CalendarEventDay, this), // pour ne pas perdre le this en tant que mon app
+                numberOfMonths: 1,
+                showButtonPanel: true
+        
+                };
+        
+                this.$datepicker.datepicker( options);
                 
+            }
+
+
+            // CalendarEventDay(date){ 
+                      
+            //             for(var key in this.events){ //  var "key" "in" tableau events
+            //             var event = this.events[key]; // fait passer la "key" du tableau dans une variable eventold
+                        
+            //             if( event.datestartevent  == date.toLocaleDateString() ){ 
+
+            //                 return [true, ""];// on affiche le jour calandar
+          
+            //                     }
+                        
+            //             return [false, ""];//sinon, on cache le jour du calendar
+            //         }
+            //     }
             
     } //end APP
