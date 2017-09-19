@@ -104,7 +104,7 @@ $(document).on("click", "#deletealloldevents", function(event){
 //on click sur la date de event du calendar
 $(document).on("click", ".ui-state-default.ui-state-active", function(){
     app.$infos.fadeIn(300); 
-    var index = $ (".ui-state-default.ui-state-active").index( $(this).parent() );
+    var index = $ ("#calendrier .ui-datepicker").index( $(this).parent() );
     var event = app.events[ index ]; //cherche l'event corrspondant
     
     app.$titre.html( event.name );
