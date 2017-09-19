@@ -1,5 +1,6 @@
 var app = new App(); // instance de l'application
 app.initPickersEvents(); // init du datepicker form events
+app.initPickersCalendar(); // init le datepicker calendar
 app.reinit(); // init des hide() slideup() et val() des events dans le formulaire
 
 ////////// formulaire ajouter event et gestion des alerts  ///////////////
@@ -18,16 +19,20 @@ app.$form_event.submit(function(event){
     var datestartevent = app.$date_start_event.val();// recupere la valeur du champ description
     var dateendevent = app.$date_end_event.val();// recupere la valeur du champ description
 
+    var today = new Date();
 
     var event = new Event ( name, description, datestartevent, dateendevent );
     app.addEvent( event );
     event.display();
+    
     app.setAlertToday();
     app.displayAlertToday();
     app.setAlertCloseToday();
     app.displayAlertCloseToday();
     app.setOldEventsToShow();
     app.displayOldEventsToShow();
+    app.initPickersCalendar();
+    app.CalendarEventDay(today);
     app.reinit();
 
 });
@@ -95,6 +100,21 @@ $(document).on("click", "#deletealloldevents", function(event){
     app.$events_old.hide();
     app.$infos.fadeOut(300);
 });  
+
+//on click sur la date de event du calendar
+$(document).on("click", ".ui-state-default.ui-state-active", function(){
+    app.$infos.fadeIn(300); 
+    var index = $ (".ui-state-default.ui-state-active").index( $(this).parent() );
+    var event = app.events[ index ]; //cherche l'event corrspondant
+    
+    app.$titre.html( event.name );
+    app.$descriptioninfos.html( event.description );
+    app.$d_event.html( event.datestartevent );
+    app.$e_event.html( event.dateendevent );
+    
+    });
+
+
 
     window.onbeforeunload = function(){ //lorsque l'utilisateur quitte la page sauvegarde sur localstorage
     app.saveEvents();

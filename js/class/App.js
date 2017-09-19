@@ -35,7 +35,7 @@ class App {
 
             // calendar
             this.$datepicker = $("#datepicker");
-            
+            this.$eventcalendaractive = $('.ui-state-default.ui-state-active');
 
             // variables static pour event et alerts et calendar
             this.today = new Date();
@@ -370,24 +370,30 @@ class App {
         
                 };
         
-                this.$datepicker.datepicker( options);
-                
+                 this.$datepicker.datepicker(options);
+                // this.$datepicker.datepicker( "options", "beforeShowDay", true);
+
             }
 
 
-            // CalendarEventDay(date){ 
-                      
-            //             for(var key in this.events){ //  var "key" "in" tableau events
-            //             var event = this.events[key]; // fait passer la "key" du tableau dans une variable eventold
-                        
-            //             if( event.datestartevent  == date.toLocaleDateString() ){ 
+            CalendarEventDay(date){ 
+                    //   console.log(date);
+                    //     console.log(this.events);
+                        if(!this.events){ // s'il n y a pas d'event dans le LS alors on arrete la boucle
+                        return [false, ""];
+                        }
 
-            //                 return [true, ""];// on affiche le jour calandar
-          
-            //                     }
+                        for(var key in this.events){ //  var "key" "in" tableau events
+                        var event = this.events[key]; // fait passer la "key" du tableau dans une variable eventold
                         
-            //             return [false, ""];//sinon, on cache le jour du calendar
-            //         }
-            //     }
+                        if( event.datestartevent  == date.toLocaleDateString() ){ 
+
+                            return [true, ""];// on affiche le jour calandar
+          
+                                }
+                        
+                    }
+                    return [false, ""];//sinon, on cache le jour du calendar
+                }
             
     } //end APP
